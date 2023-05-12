@@ -1,5 +1,6 @@
 package net.javaguides.springboot.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -11,45 +12,43 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "movs")
-public class Mov {
+public class Mov implements Serializable {
     // Attributs
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
-    @Column(name = "creation_date")
+    @Column(name = "creation_date", nullable = false, updatable = false)
     private Date creDate;
 
-    @Column(name = "creation_author")
+    @Column(name = "creation_author", nullable = false, updatable = false)
     private String creAut;
 
-    @Column(name = "movement_date")
+    @Column(name = "movement_date", nullable = false, updatable = false)
     private Date movDate;
 
-    @Column(name = "declaration_place")
-    private String decPlace;
+    @Column(name = "declaration_place", nullable = false, updatable = false)
+    private String decPlace = "RapidCargo CDG";
 
     // Constructeurs
     public Mov() {
 
     }
 
-    public Mov(String id, Date creDate, String creAut, Date movDate, String decPlace) {
+    public Mov(Date creDate, String creAut, Date movDate) {
         super();
-        this.id = id;
         this.creDate = creDate;
         this.creAut = creAut;
         this.movDate = movDate;
-        this.decPlace = decPlace;
     }
 
     // Getters et setters
-    public String getId() {
-        return id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public Long getId() {
+        return id;
     }
 
     public Date getCreDate() {
@@ -82,5 +81,17 @@ public class Mov {
 
     public void setDecPlace(String decPlace) {
         this.decPlace = decPlace;
+    }
+
+    // affichage
+    @Override
+    public String toString() {
+        return "Mouvement :{" + '\'' +
+                "id" + id + '\'' +
+                ", Date de création" + creDate + '\'' +
+                ", Auteur" + creAut + '\'' +
+                ", Date du mouvement" + movDate + '\'' +
+                ", Lieu de déclaration" + decPlace + '\'' +
+                "}";
     }
 }

@@ -16,27 +16,26 @@
           <th class="text-center">Statut douanier</th>
         </thead>
         <tbody>
+          <!-- <tr>
+            <td>10-05-2023 20:27:30</td>
+            <td>SORTIE</td>
+            <td>NV1</td>
+            <td>SL2</td>
+            <td>AWB 000 0000 0000</td>
+            <td>12</td>
+            <td>203.23</td>
+            <td>X</td>
+          </tr> -->
           <!-- a completer avec java back spring boot-->
-          <tr>
-            <td>10-05-2023 20:27:30</td>
-            <td>SORTIE</td>
-            <td>NV1</td>
-            <td>SL2</td>
-            <td>AWB 000 0000 0000</td>
-            <td>12</td>
-            <td>203.23</td>
-            <td>X</td>
-          </tr>
-
-          <tr>
-            <td>10-05-2023 20:27:30</td>
-            <td>SORTIE</td>
-            <td>NV1</td>
-            <td>SL2</td>
-            <td>AWB 000 0000 0000</td>
-            <td>12</td>
-            <td>203.23</td>
-            <td>X</td>
+          <tr *ngFor="let mov of movs">
+            <td>{{ mov.id }}</td>
+            <td>{{ mov.creAut }}</td>
+            <td>{{ mov.creDate }}</td>
+            <td>{{ mov.movDate }}</td>
+            <td>{{ mov.id }}</td>
+            <td>{{ mov.id }}</td>
+            <td>{{ mov.id }}</td>
+            <td>{{ mov.id }}</td>
           </tr>
         </tbody>
       </table>

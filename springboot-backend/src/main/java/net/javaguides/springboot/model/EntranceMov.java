@@ -2,18 +2,44 @@ package net.javaguides.springboot.model;
 
 import java.util.Date;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "entranceMovs")
 public class EntranceMov extends Mov {
     // Attributs
     // Faire cohincider avec le front
+
+    @Column(name = "code")
     private String code;
+
+    @Column(name = "label")
     private String label;
+
+    @Column(name = "ref_type")
     private String refType;
+
+    @Column(name = "ref")
     private int ref;
+
+    @Column(name = "qtt")
     private int quantity;
+
+    @Column(name = "wgt")
     private long weight;
+
+    @Column(name = "qtt_tot")
     private int quantityTot;
+
+    @Column(name = "wgt_tot")
     private long weightTot;
+
+    @Column(name = "desc")
     private String desc;
+
+    @Column(name = "state")
     private String state;
 
     // Constructeurs
@@ -21,10 +47,10 @@ public class EntranceMov extends Mov {
 
     }
 
-    public EntranceMov(String id, Date creDate, String creAut, Date movDate, String decPlace, String code, String label,
+    public EntranceMov(Date creDate, String creAut, Date movDate, String code, String label,
             String refType, int ref, int quantity, long weight, int quantityTot, long weightTot, String desc,
             String state) {
-        super(id, creDate, creAut, movDate, decPlace);
+        super(creDate, creAut, movDate);
         this.code = code;
         this.label = label;
         this.refType = refType;
@@ -116,5 +142,22 @@ public class EntranceMov extends Mov {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    // affichage
+    @Override
+    public String toString() {
+        return "Mouvement d'entrée : {" + '\'' +
+                "code" + code + '\'' +
+                ", label" + label + '\'' +
+                ", refType" + refType + '\'' +
+                ", ref" + ref + '\'' +
+                ", quantity" + quantity + '\'' +
+                ", quantityTot" + quantityTot + '\'' +
+                ", weight" + weight + '\'' +
+                ", weightTot" + weightTot + '\'' +
+                ", desc" + desc + '\'' +
+                ", state" + state + '\'' +
+                "}";
     }
 }
