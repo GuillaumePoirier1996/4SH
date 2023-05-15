@@ -18,23 +18,23 @@ public class EntranceMov extends Mov {
     @Column(name = "label")
     private String label;
 
-    @Column(name = "ref_type")
+    @Column(name = "refType")
     private String refType;
 
     @Column(name = "ref")
     private int ref;
 
-    @Column(name = "qtt")
+    @Column(name = "quantity")
     private int quantity;
 
-    @Column(name = "wgt")
-    private long weight;
+    @Column(name = "weight")
+    private float weight;
 
-    @Column(name = "qtt_tot")
+    @Column(name = "quantityTot")
     private int quantityTot;
 
-    @Column(name = "wgt_tot")
-    private long weightTot;
+    @Column(name = "weightTot")
+    private float weightTot;
 
     @Column(name = "desc")
     private String desc;
@@ -112,19 +112,19 @@ public class EntranceMov extends Mov {
         this.quantityTot = quantityTot;
     }
 
-    public long getWeight() {
+    public float getWeight() {
         return weight;
     }
 
-    public void setWeight(long weight) {
+    public void setWeight(float weight) {
         this.weight = weight;
     }
 
-    public long getWeightTot() {
+    public float getWeightTot() {
         return weightTot;
     }
 
-    public void setWeightTot(long weightTot) {
+    public void setWeightTot(float weightTot) {
         this.weightTot = weightTot;
     }
 

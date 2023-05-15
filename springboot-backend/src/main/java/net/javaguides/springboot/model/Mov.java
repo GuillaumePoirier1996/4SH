@@ -18,16 +18,16 @@ public class Mov implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "creation_date", nullable = false, updatable = false)
+    @Column(name = "creDate", nullable = false, updatable = false)
     private Date creDate;
 
-    @Column(name = "creation_author", nullable = false, updatable = false)
+    @Column(name = "creAut", nullable = false, updatable = false)
     private String creAut;
 
-    @Column(name = "movement_date", nullable = false, updatable = false)
+    @Column(name = "movDate", nullable = false, updatable = false)
     private Date movDate;
 
-    @Column(name = "declaration_place", nullable = false, updatable = false)
+    @Column(name = "decPlace", nullable = false, updatable = false)
     private String decPlace = "RapidCargo CDG";
 
     // Constructeurs

@@ -1,7 +1,6 @@
 package net.javaguides.springboot.controller;
 
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -18,22 +17,29 @@ import net.javaguides.springboot.repository.MovsRepo;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("api/")
+@RequestMapping("/api")
 public class MovController {
     @Autowired
     private MovsRepo movsRepo;
 
-    @PostMapping("add")
-    public Mov addEntranceMov(EntranceMov movIn) {
+    @PostMapping("/add")
+    public Mov addMov(Mov mov) {
+        System.out.println(movsRepo);
+        System.out.println(mov);
+        return movsRepo.save(mov);
+    }
+
+    @PostMapping("/addEntranceMov")
+    public EntranceMov addEntranceMov(EntranceMov movIn) {
         return movsRepo.save(movIn);
     }
 
-    @PostMapping("add")
-    public Mov addExitMov(ExitMov movOut) {
+    @PostMapping("/addExitMov")
+    public ExitMov addExitMov(ExitMov movOut) {
         return movsRepo.save(movOut);
     }
 
-    @GetMapping("Movs")
+    @GetMapping("/Movs")
     public List<Mov> getMovs() {
 
         Sort sort = Sort.by("creDate").descending();

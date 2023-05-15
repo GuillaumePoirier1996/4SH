@@ -28,14 +28,12 @@
           </tr> -->
           <!-- a completer avec java back spring boot-->
           <tr *ngFor="let mov of movs">
-            <td>{{ mov.id }}</td>
-            <td>{{ mov.creAut }}</td>
-            <td>{{ mov.creDate }}</td>
-            <td>{{ mov.movDate }}</td>
-            <td>{{ mov.id }}</td>
-            <td>{{ mov.id }}</td>
-            <td>{{ mov.id }}</td>
-            <td>{{ mov.id }}</td>
+            <td>{{ mov?.creDate }}</td>
+            <td>{{ if (typeof mov === ExitMov) {'SORTIE'} else {'ENTREE'}}}</td>
+            <td>{{ mov?.refType }} {{ mov?.ref }}</td>
+            <td>{{ mov?.quantityTot }}</td>
+            <td>{{ mov?.weightTot }}</td>
+            <td>{{ mov?.state }}</td>
           </tr>
         </tbody>
       </table>
