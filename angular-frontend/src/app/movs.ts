@@ -4,6 +4,8 @@ export class Movs {
     creAut!: string;
     movDate!: Date;
     decPlace!: string;
+    from!: string;
+    to!: string;
     
     state: any;
     ref!: any;
@@ -27,6 +29,7 @@ export class EntranceMov extends Movs {
     //weightTot!: Float32Array;
     desc!: string;
     //state!: string;
+    //to = "RapidCargo CDG"
 }
 
 export class ExitMov extends Movs {

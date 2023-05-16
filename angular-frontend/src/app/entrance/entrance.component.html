@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header text-white bg-info">Entrée</div>
   <div class="card-body">
-    <form>
+    <form (ngSubmit)="addEntranceMov(registerForm)" #registerForm="ngForm">
       <div class="container">
         <div class="row">
           <!-- magazin d'origine -->
@@ -9,7 +9,13 @@
             <label for="storeList">Magazin d'origine</label>
           </div>
           <div class="col-md-1 mb-3">
-            <select class="custom-select" id="storeList">
+            <select
+              class="custom-select"
+              id="storeList"
+              [(ngModel)]="movIn.from"
+              name="from"
+              required
+            >
               <option selected>ComboBox</option>
               <option>Magazin 1</option>
               <option>Magazin 2</option>
@@ -17,7 +23,7 @@
             </select>
           </div>
           <div class="col-md-2 mb-3 offset-md-1">
-            <input type="text" class="form-control" id="storeComp" />
+            <input type="text" class="form-control" id="storeComp" required />
           </div>
 
           <!-- Statut douanier-->
@@ -25,16 +31,19 @@
             <label for="stateList">Statut Douanier</label>
           </div>
           <div class="col-md-1 mb-3">
-            <select class="custom-select" id="stateList">
+            <select
+              class="custom-select"
+              id="stateList"
+              [(ngModel)]="movIn.state"
+              name="state"
+              required
+            >
               <option selected>T1</option>
               <option>A</option>
               <option>B</option>
               <option>C</option>
               <option>D</option>
               <option>E</option>
-              <!-- {{
-                options
-              }} -->
             </select>
           </div>
 
@@ -43,7 +52,13 @@
             <label for="refList">Réference</label>
           </div>
           <div class="col-md-1 mb-3">
-            <select class="custom-select" id="refList">
+            <select
+              class="custom-select"
+              id="refList"
+              [(ngModel)]="movIn.refType"
+              name="refType"
+              required
+            >
               <option selected>Type</option>
               <option>AWB</option>
               <option>Autre</option>
@@ -54,8 +69,10 @@
               type="text"
               class="form-control"
               id="refId"
-              pattern="^[\d\s]+$"
+              pattern="^[\d]+$"
               required
+              [(ngModel)]="movIn.ref"
+              name="ref"
             />
             <div class="invalid-feedback">
               Le champ ne doit contenir que des chiffres et des espaces.
@@ -68,7 +85,14 @@
             <label for="comNat">Nature de la Marchandise</label>
           </div>
           <div class="col-md-7 mb-3 offset-md-1">
-            <input type="text" class="form-control" id="comNat" />
+            <input
+              type="text"
+              class="form-control"
+              id="comNat"
+              required
+              [(ngModel)]="movIn.desc"
+              name="desc"
+            />
           </div>
 
           <!-- quantité -->
@@ -76,7 +100,14 @@
             <label for="qt">Quantité</label>
           </div>
           <div class="col-md-3 mb-3">
-            <input type="number" class="form-control" id="qt" />
+            <input
+              type="number"
+              class="form-control"
+              id="qt"
+              required
+              [(ngModel)]="movIn.quantity"
+              name="quantity"
+            />
           </div>
 
           <!-- poids -->
@@ -84,7 +115,14 @@
             <label for="wei">Poids</label>
           </div>
           <div class="col-md-3 mb-3">
-            <input type="number" class="form-control" id="wei" />
+            <input
+              type="number"
+              class="form-control"
+              id="wei"
+              [(ngModel)]="movIn.weight"
+              name="weight"
+              required
+            />
           </div>
           <div class="clearfix"></div>
 
@@ -93,7 +131,14 @@
             <label for="qtTot">Quantité totale</label>
           </div>
           <div class="col-md-3 mb-3">
-            <input type="number" class="form-control" id="qtTot" />
+            <input
+              type="number"
+              class="form-control"
+              id="qtTot"
+              [(ngModel)]="movIn.quantityTot"
+              name="quantityTot"
+              required
+            />
           </div>
 
           <!-- poids total-->
@@ -101,14 +146,27 @@
             <label for="weiTot">Poids total</label>
           </div>
           <div class="col-md-3 mb-3">
-            <input type="number" class="form-control" id="weiTot" />
+            <input
+              type="number"
+              class="form-control"
+              id="weiTot"
+              [(ngModel)]="movIn.weightTot"
+              name="weightTot"
+              required
+            />
           </div>
 
           <!-- Boutons -->
           <div class="d-flex justify-content-md-end">
             <!-- Utilise flex-box et justify-content-md-end -->
             <button type="reset" class="btn btn-primary me-2">Annuler</button>
-            <button type="submit" class="btn btn-secondary">Envoyer</button>
+            <button
+              [disabled]="registerForm.invalid"
+              type="submit"
+              class="btn btn-secondary"
+            >
+              Envoyer
+            </button>
           </div>
         </div>
       </div>

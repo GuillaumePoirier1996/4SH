@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { EntranceComponent } from './entrance/entrance.component';
 import { ExitComponent } from './exit/exit.component';
 import { MovsComponent } from './movs/movs.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MovsComponent } from './movs/movs.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

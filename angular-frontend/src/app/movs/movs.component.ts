@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovsService } from '../movs.service';
-import { Movs } from '../movs';
+import { Movs, EntranceMov, ExitMov } from '../movs';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({

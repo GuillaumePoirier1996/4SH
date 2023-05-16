@@ -17,7 +17,7 @@
             </select>
           </div>
           <div class="col-md-2 mb-3 offset-md-1">
-            <input type="text" class="form-control" id="storeComp" />
+            <input type="text" class="form-control" id="storeComp" required />
           </div>
 
           <!-- Statut douanier-->
@@ -48,14 +48,14 @@
           </div>
           <div class="col-md-3 mb-3 offset-md-1">
             <input
-              type="text"
+              type="int"
               class="form-control"
               id="refId"
-              pattern="^[\d\s]+$"
+              pattern="^[\d]+$"
               required
             />
             <div class="invalid-feedback">
-              Le champ ne doit contenir que des chiffres et des espaces.
+              <span>Le champ ne doit contenir que des chiffres.</span>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -65,7 +65,7 @@
             <label for="apList">Apurement</label>
           </div>
           <div class="col-md-1 mb-3">
-            <select class="custom-select" id="apList">
+            <select class="custom-select" id="apList" required>
               <option selected>T1</option>
               <option>A</option>
               <option>B</option>
@@ -80,6 +80,7 @@
               class="form-control"
               id="refApId"
               placeholder="ref document ap"
+              required
             />
           </div>
           <div class="clearfix"></div>
@@ -89,7 +90,7 @@
             <label for="comNat">Nature de la Marchandise</label>
           </div>
           <div class="col-md-7 mb-3 offset-md-1">
-            <input type="text" class="form-control" id="comNat" />
+            <input type="text" class="form-control" id="comNat" required />
           </div>
 
           <!-- quantité -->
@@ -97,7 +98,7 @@
             <label for="qt">Quantité</label>
           </div>
           <div class="col-md-3 mb-3">
-            <input type="number" class="form-control" id="qt" />
+            <input type="number" class="form-control" id="qt" required />
           </div>
 
           <!-- poids -->
@@ -105,7 +106,7 @@
             <label for="wei">Poids</label>
           </div>
           <div class="col-md-3 mb-3">
-            <input type="number" class="form-control" id="wei" />
+            <input type="number" class="form-control" id="wei" required />
           </div>
           <div class="clearfix"></div>
 
@@ -114,7 +115,7 @@
             <label for="qtTot">Quantité totale</label>
           </div>
           <div class="col-md-3 mb-3">
-            <input type="number" class="form-control" id="qtTot" />
+            <input type="number" class="form-control" id="qtTot" required />
           </div>
 
           <!-- poids total-->
@@ -122,7 +123,7 @@
             <label for="weiTot">Poids total</label>
           </div>
           <div class="col-md-3 mb-3">
-            <input type="number" class="form-control" id="weiTot" />
+            <input type="number" class="form-control" id="weiTot" required />
           </div>
 
           <!-- Boutons -->

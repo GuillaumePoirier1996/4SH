@@ -29,7 +29,12 @@
           <!-- a completer avec java back spring boot-->
           <tr *ngFor="let mov of movs">
             <td>{{ mov?.creDate }}</td>
-            <td>{{ if (typeof mov === ExitMov) {'SORTIE'} else {'ENTREE'}}}</td>
+            <td>
+              <!--{{ if (typeof mov === ExitMov) {'SORTIE'} else {'ENTREE'}}} -->
+              Entrée ou Sortie
+            </td>
+            <td>DE</td>
+            <td>Vers</td>
             <td>{{ mov?.refType }} {{ mov?.ref }}</td>
             <td>{{ mov?.quantityTot }}</td>
             <td>{{ mov?.weightTot }}</td>
